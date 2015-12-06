@@ -10,5 +10,5 @@ $telegram->setWebhook('https://cantareirabot.herokuapp.com/index.php');
 $updates = $telegram->getWebhookUpdates();
 
 foreach ($updates as $up) {
-	error_log("temos update");
+	error_log(print_r($up, true));
 }
