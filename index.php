@@ -10,5 +10,7 @@ $telegram->setWebhook('https://cantareirabot.herokuapp.com/index.php');
 $updates = $telegram->getWebhookUpdates();
 
 foreach ($updates as $up) {
-	error_log(print_r($up, true));
+	$amigo = $up['from']['first_name'];
+	$cid = $up['chat']['id'];
+	$telegram->sendMessage($cid, "Oi pra voce tambem amigo ".$amigo."!");
 }
