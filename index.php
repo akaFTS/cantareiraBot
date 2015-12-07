@@ -14,6 +14,7 @@ foreach ($updates as $up) {
 	$down = json_decode($down);
 	$amigo = $down->from->first_name;
 	$cid = $down->chat->id;
-	error_log($cid);
+	error_log("bleh ".$cid);
+	error_log($down);
 	$telegram->sendMessage($cid, "Oi pra voce tambem amigo ".$amigo."!");
 }
