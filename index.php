@@ -12,7 +12,7 @@ $updates = $telegram->getWebhookUpdates();
 foreach ($updates as $up) {
 	$down = json_encode($up);
 	$msg = json_decode($down);
-	error_log(print_r($msg->chat, true));
-	error_log("a ".$msg->chat->id);
+	error_log(json_encode($msg->chat));
+	error_log("a ".json_encode($msg->chat->id));
 	//$telegram->sendMessage($cid, "Oi pra voce tambem amigo ".$amigo."!");
 }
