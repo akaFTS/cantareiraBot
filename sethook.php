@@ -1,6 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
+require 'comandos/StartCommand.php';
 use Telegram\Bot\Api;
 
 
