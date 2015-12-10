@@ -1,0 +1,3 @@
+<?php
+
+$telegram->commandsHandler(true);
