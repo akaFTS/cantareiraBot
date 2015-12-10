@@ -19,8 +19,8 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
-
+$app->withFacades();
+class_alias('Telegram\Bot\Laravel\Facades\Telegram', 'Telegram');
 // $app->withEloquent();
 
 /*
@@ -80,6 +80,8 @@ $app->singleton(
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+$app->register(Irazasyed\Larasupport\Providers\ArtisanServiceProvider::class);
+$app->register(Telegram\Bot\Laravel\TelegramServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

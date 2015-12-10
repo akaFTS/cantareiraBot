@@ -1,21 +1,19 @@
-## Lumen PHP Framework
+## cantareiraBot
+Bot para Telegram que informa as variações de nível nos mananciais de São Paulo.
+* * *
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+### Comandos
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+- */hoje:* Ver variação diária em todos os mananciais
+- */chuva:* Ver informações sobre a pluviometria em cada sistema.
+- */semanal:* Ver a variação semanal de um dado sistema.
 
-## Official Documentation
+### Como utilizar:
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+Baixe o Telegram e acesse o bot no seguinte link: http://telegram.me/cantareirabot
+* * *
 
-## Security Vulnerabilities
+Sinta-se a vontade para fazer um branch e adicionar novas funcionalidades!
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-### License
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
