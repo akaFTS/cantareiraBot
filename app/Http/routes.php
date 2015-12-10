@@ -17,6 +17,12 @@ $app->get('/', function () use ($app) {
 
 $app->get('/sethook', function () use ($app) {
     Telegram::setWebhook('https://cantareirabot.herokuapp.com/webhook');
+    $response = Telegram::getMe();
+
+	$botId = $response->getId();
+	$firstName = $response->getFirstName();
+	$username = $response->getUsername();
+	return $firstName;
 });
 
 $app->post('/webhook', function () use ($app) {

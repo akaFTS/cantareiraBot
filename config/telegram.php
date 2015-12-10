@@ -10,10 +10,10 @@ return [
     | Example: 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
     |
     | Refer for more details:
-    | https://core.telegram.org/bots#botfather
+    | https://core.telegram.org/bots#bBotfather
     |
     */
-    'bot_token' => '173649343:AAGzLaPRv_6_NIrkFguAUI2hOQZM3WEUdKU',
+    'bot_token' => env('TELEGRAM_BOT_TOKEN', '173649343:AAGzLaPRv_6_NIrkFguAUI2hOQZM3WEUdKU'),
 
     /*
     |--------------------------------------------------------------------------
