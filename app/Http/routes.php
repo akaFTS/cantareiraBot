@@ -17,8 +17,8 @@ $app->get('/', function () use ($app) {
 
 $app->get('/sethook', function () use ($app) {
     Telegram::setWebhook('https://cantareirabot.herokuapp.com/webhook');
-    $command = new App\Commands\HelpCom();
-	$telegram->addCommand($command);
+    $command = new App\Http\Controllers\Controller();
+	//$telegram->addCommand($command);
 });
 
 $app->post('/webhook', function () use ($app) {
