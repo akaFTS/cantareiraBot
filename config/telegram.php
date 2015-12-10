@@ -56,6 +56,6 @@ return [
     |
     */
     'commands' => [
-        Telegram\Bot\Commands\HelpCom::class
+        Telegram\Bot\Commands\HelpCommand::class
     ],
 ];
