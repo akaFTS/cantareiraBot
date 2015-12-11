@@ -28,9 +28,15 @@ class ChuvaCommand extends Command
         $chuvas = Mananciais::getChuvas();
         $messages = array();
         foreach($chuvas->manans as $manan) {
-            $messages[] = "🔹 {$manan->nome}:\n\n🌧 Hoje: {$manan->hoje}\n💧 Acumulado: {$manan->acum}\n🕙 Média histórica: {$manan->media}";
+            $hoje = floatval($manan->hoje);
+            if($hoje > 3.0)
+                $hojmoji = "🌧";
+            else
+                $hojmoji = "⛅";
+            
+            $messages[] = "♦️ {$manan->nome}:\n\n{$hojmoji} Hoje: {$manan->hoje}\n💧 Acumulado: {$manan->acum}\n📊 Média histórica: {$manan->media}";
         }
-        $messages[] = ("Data: ".$chuvas->data);
+        $messages[] = ("📅 Data: ".$chuvas->data);
         $message = "☔ CHUVA ☔\n\n".implode("\n\n〰️〰️〰️〰️〰️〰️〰️〰\n\n", $messages);
         $this->replyWithMessage($message);
     }
