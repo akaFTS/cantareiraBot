@@ -28,10 +28,10 @@ class ChuvaCommand extends Command
         $chuvas = Mananciais::getChuvas();
         $messages = array();
         foreach($chuvas->manans as $manan) {
-            $messages[] = "- {$manan->nome}:\n\nHoje: {$manan->hoje}\nAcumulado: {$manan->acum}\nMédia histórica: {$manan->media}";
+            $messages[] = "🔹 {$manan->nome}:\n\n🌧 Hoje: {$manan->hoje}\n💧 Acumulado: {$manan->acum}\n🕙 Média histórica: {$manan->media}";
         }
-        $messages[] = ("Data: ".$chuvas->data." 😁");
-        $message = implode("\n\n-------------\n\n", $messages);
+        $messages[] = ("Data: ".$chuvas->data);
+        $message = "☔ CHUVA ☔\n\n".implode("\n\n〰️〰️〰️〰️〰️〰️〰️〰\n\n", $messages);
         $this->replyWithMessage($message);
     }
 }
