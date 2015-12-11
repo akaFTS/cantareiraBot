@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Commands;
+
+
+use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 
-/**
- * Class HelpCommand
- *
- */
 class HelpCom;
 {
     /**
