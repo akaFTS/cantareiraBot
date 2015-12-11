@@ -6,6 +6,7 @@ namespace App\Commands;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 use App\Classes\Mananciais;
+use App\Classes\Emoji;
 
 class ChuvaCommand extends Command
 {
@@ -29,7 +30,7 @@ class ChuvaCommand extends Command
         foreach($chuvas->manans as $manan) {
             $messages[] = "- {$manan->nome}:\n\nHoje: {$manan->hoje}\nAcumulado: {$manan->acum}\nMédia histórica: {$manan->media}";
         }
-        $messages[] = ("Data: ".$chuvas->data." :+1:");
+        $messages[] = ("Data: ".$chuvas->data." ".Emoji::getEmoji(Emoji::RELOGIO));
         $message = implode("\n\n-------------\n\n", $messages);
         $this->replyWithMessage($message);
     }
