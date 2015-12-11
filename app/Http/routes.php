@@ -6,20 +6,11 @@
 |--------------------------------------------------------------------------
 |
 | Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->welcome();
-});
-
-$app->get('/sethook', function () use ($app) {
-    Telegram::setWebhook('https://cantareirabot.herokuapp.com/webhook');
-});
-
-$app->post('/webhook', function () use ($app) {
-    Telegram::commandsHandler(true);
-    return 'ok';
+Route::get('/', function () {
+    return view('welcome');
 });
