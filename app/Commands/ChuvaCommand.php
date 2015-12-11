@@ -29,10 +29,14 @@ class ChuvaCommand extends Command
         $messages = array();
         foreach($chuvas->manans as $manan) {
             $hoje = floatval($manan->hoje);
-            if($hoje > 3.0)
+            if($hoje == 0)
+                $hojmoji = "☀️";
+            else if($hoje < 2.0)
+                $hojmoji = "⛅";
+            else if($hoje < 6.0)
                 $hojmoji = "🌧";
             else
-                $hojmoji = "⛅";
+                $hojmoji = "⛈";
             
             $messages[] = "♦️ {$manan->nome}:\n\n{$hojmoji} Hoje: {$manan->hoje}\n💧 Acumulado: {$manan->acum}\n📊 Média histórica: {$manan->media}";
         }
