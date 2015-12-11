@@ -5,7 +5,7 @@ namespace App\Commands;
 
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
-use \Mananciais;
+use App\Classes\Mananciais;
 
 class ChuvaCommand extends Command
 {
@@ -24,7 +24,13 @@ class ChuvaCommand extends Command
      */
     public function handle($arguments)
     {
-        $message = Mananciais::getChuvas();
+        $chuvas = Mananciais::getChuvas();
+        $messages = array();
+        foreach($chuvas as $manan) {
+            $messages[] = "- {$manan->nome}:\n\nHoje: {$manan->hoje}\nAcumulado: {$manan->acum}\n
+                        Média histórica: {$manan->media}\n\n";
+        }
+        $message = implode("-------------\n\n", $messages);
         $this->replyWithMessage($message);
     }
 }
