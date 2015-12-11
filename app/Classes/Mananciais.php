@@ -33,7 +33,7 @@ class Mananciais {
 		$client = new Client();
 		$crawler = $client->request('GET', 'http://www.apolo11.com/reservatorios.php?step=d');
 		$tables = $crawler->filter("font[face='arial']");
-		$cnt = $tables->eq(10)->text();
+		$cnt = $tables->eq(24)->text();
 		return $cnt;	
 	}
 
