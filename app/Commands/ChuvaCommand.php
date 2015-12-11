@@ -5,7 +5,6 @@ namespace App\Commands;
 
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
-use Goutte\Client;
 
 class ChuvaCommand extends Command
 {
@@ -24,13 +23,7 @@ class ChuvaCommand extends Command
      */
     public function handle($arguments)
     {
-
-        $message = "";
-
-        $client = new Client();
-        $crawler = $client->request('GET', 'http://www2.sabesp.com.br/mananciais/DivulgacaoSiteSabesp.aspx');
-        $tabela = $crawler->filter("table.tabDados");
-        $message = $tabela->filter(".guardaImgBgDetalhe")->text();
+        $message = Mananciais::getChuvas();
         $this->replyWithMessage($message);
     }
 }
