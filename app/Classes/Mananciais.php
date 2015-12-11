@@ -34,8 +34,9 @@ class Mananciais {
 		$client = new Client();
 		$crawler = $client->request('GET', 'http://www.apolo11.com/reservatorios.php?step=d');
 		$tables = $crawler->filter("font[face='arial']");
+		$data = $crawler->filter("font[face='verdana']");
 		$obj = new stdClass();
-		$obj->data = "66/66/6666";
+		$obj->data = $data->eq(16)->text();
 		$obj->niveis = array();
 		$tmp = array();
 		for($i = 0; $i < 6; $i++){
