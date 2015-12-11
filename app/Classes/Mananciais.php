@@ -30,11 +30,29 @@ class Mananciais {
 	}
 
 	public static function getHoje(){
+		$nomes = ["Cantareira", "Guarapiranga", "Alto Cotia", "Alto Tietê", "Rio Claro", "Rio Grande"];
 		$client = new Client();
 		$crawler = $client->request('GET', 'http://www.apolo11.com/reservatorios.php?step=d');
 		$tables = $crawler->filter("font[face='arial']");
-		$cnt = $tables->eq(24)->text();
-		return $cnt;	
+		$obj = new stdClass();
+		$obj->data = "66/66/6666";
+		$obj->niveis = array();
+		$tmp = array();
+		for($i = 0; $i < 6; $i++){
+			$nivel = new stdClass();
+			$nivel->nome = $nomes[$i];
+			$nivel->hoje = $tables->eq($i*9 + 16)->text();
+			$nivel->ontem = $tables->eq($i*9 + 15)->text();
+			$tmp[] = $nivel;
+		}
+		$obj->nivel[0] = $tmp[0];
+		$obj->nivel[1] = $tmp[3];
+		$obj->nivel[2] = $tmp[1];
+		$obj->nivel[3] = $tmp[2];
+		$obj->nivel[4] = $tmp[5];
+		$obj->nivel[5] = $tmp[4];
+
+		return $obj;	
 	}
 
 }

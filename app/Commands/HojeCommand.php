@@ -24,7 +24,8 @@ class HojeCommand extends Command
      */
     public function handle($arguments)
     {
-        $cnt = Mananciais::getHoje();
-        $this->replyWithMessage($cnt);
+        $niveis = Mananciais::getHoje();
+        error_log(json_encode($niveis));
+        $this->replyWithMessage("oi");
     }
 }
