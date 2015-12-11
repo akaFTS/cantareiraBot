@@ -25,10 +25,15 @@ class ChuvaCommand extends Command
     public function handle($arguments)
     {
 
+        $message = "";
+
         $client = new Client();
         $crawler = $client->request('GET', 'http://www2.sabesp.com.br/mananciais/DivulgacaoSiteSabesp.aspx');
         $tabela = $crawler->filter("table.tabDados");
-        $message = $tabela->text();
+        $tabela->filter(".guardaImgBgDetalhe")->each(function($node, $i){
+            $message .= $node->text()." - ".$i;
+            $message .= PHP_EOL;
+        });
         $this->replyWithMessage($message);
     }
 }
