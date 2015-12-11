@@ -12,7 +12,10 @@ class Mananciais {
 		$client = new Client();
 		$crawler = $client->request('GET', 'http://www2.sabesp.com.br/mananciais/DivulgacaoSiteSabesp.aspx');
         $cells = $crawler->filter("table.tabDados")->filter(".guardaImgBgDetalhe");
-		$chuvas = array();
+        $data = $crawler->filter("#lblData")->text();
+		$chuvas = new stdClass();
+		$chuvas->data = $data;
+		$chuvas->manans = array();
 		$nomes = ["Cantareira", "Alto Tietê", "Guarapiranga", "Alto Cotia", "Rio Grande", "Rio Claro"];
 		for($i = 0; $i < 6; $i++){
 			$obj = new stdClass();
@@ -20,7 +23,7 @@ class Mananciais {
 			$obj->hoje = $cells->eq($i*4 + 1)->text();
 			$obj->acum = $cells->eq($i*4 + 2)->text();
 			$obj->media = $cells->eq($i*4 + 3)->text();
-			$chuvas[] = $obj;
+			$chuvas->manans[] = $obj;
 		}
 		return $chuvas;
 
