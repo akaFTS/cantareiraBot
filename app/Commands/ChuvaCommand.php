@@ -5,6 +5,7 @@ namespace App\Commands;
 
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
+use Goutte\Client;
 
 class ChuvaCommand extends Command
 {
@@ -23,6 +24,8 @@ class ChuvaCommand extends Command
      */
     public function handle($arguments)
     {
+
+        $client = new Client();
         $this->replyWithMessage('Indisponivel no momento.');
     }
 }
