@@ -5,6 +5,7 @@ namespace App\Commands;
 
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
+use App\Classes\Mananciais;
 
 class HojeCommand extends Command
 {
@@ -23,6 +24,7 @@ class HojeCommand extends Command
      */
     public function handle($arguments)
     {
-        $this->replyWithMessage('Indisponível no momento.');
+        $cnt = Mananciais::getHoje();
+        $this->replyWithMessage($cnt);
     }
 }
