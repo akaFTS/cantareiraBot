@@ -56,6 +56,8 @@ return [
     |
     */
     'commands' => [
+        App\Commands\StartCommand::class,
         App\Commands\HelpCommand::class,
+        App\Commands\SettingsCommand::class,
     ],
 ];
