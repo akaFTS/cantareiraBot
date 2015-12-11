@@ -16,7 +16,7 @@ class HelpCommand extends Command
     /**
      * @var string Command Description
      */
-    protected $description = "Ver ajuda";
+    protected $description = "Ver lista de comandos";
 
     /**
      * @inheritdoc
@@ -25,7 +25,7 @@ class HelpCommand extends Command
     {
         $commands = $this->telegram->getCommands();
 
-        $response = '';
+        $response = 'Lista de comandos do bot: '.PHP_EOL;
         foreach ($commands as $name => $handler) {
             $response .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
         }
