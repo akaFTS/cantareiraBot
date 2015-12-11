@@ -17,9 +17,9 @@ class Mananciais {
 		for($i = 0; $i < 6; $i++){
 			$obj = new stdClass();
 			$obj->nome = $nomes[$i];
-			$obj->hoje = $cells->eq($i + 1)->text();
-			$obj->acum = $cells->eq($i + 2)->text();
-			$obj->media = $cells->eq($i + 3)->text();
+			$obj->hoje = $cells->eq($i*4 + 1)->text();
+			$obj->acum = $cells->eq($i*4 + 2)->text();
+			$obj->media = $cells->eq($i*4 + 3)->text();
 			$chuvas[] = $obj;
 		}
 		return $chuvas;
