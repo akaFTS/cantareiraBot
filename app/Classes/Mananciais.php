@@ -3,6 +3,7 @@
 namespace App\Classes;
 
 use Goutte\Client;
+use \stdClass;
 
 class Mananciais {
 	
