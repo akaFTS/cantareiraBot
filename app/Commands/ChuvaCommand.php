@@ -29,7 +29,7 @@ class ChuvaCommand extends Command
         $messages = array();
         foreach($chuvas->manans as $manan) {
             $hoje = floatval($manan->hoje);
-            if($hoje == 0)
+            if($hoje < 0.8)
                 $hojmoji = "☀️";
             else if($hoje < 2.0)
                 $hojmoji = "⛅";
