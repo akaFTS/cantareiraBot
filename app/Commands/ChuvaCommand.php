@@ -28,7 +28,7 @@ class ChuvaCommand extends Command
         $client = new Client();
         $crawler = $client->request('GET', 'http://www2.sabesp.com.br/mananciais/DivulgacaoSiteSabesp.aspx');
         $tabela = $crawler->filter("table.tabDados");
-        error_log($tabela->text());
-        $this->replyWithMessage('Indisponivel no momento.');
+        $message = $tabela->text();
+        $this->replyWithMessage($message);
     }
 }
