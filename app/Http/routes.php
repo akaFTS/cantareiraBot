@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/sethook", function(){
+	Telegram::setWebhook('https://cantareirabot.herokuapp.com/webhook');
+});
+
+Route::post('/webhook', function (){
+    Telegram::commandsHandler(true);
+    return 'ok';
+});
