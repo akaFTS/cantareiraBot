@@ -5,6 +5,7 @@ namespace App\Commands;
 
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
+use \Mananciais;
 
 class ChuvaCommand extends Command
 {
