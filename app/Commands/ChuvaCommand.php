@@ -27,8 +27,7 @@ class ChuvaCommand extends Command
         $chuvas = Mananciais::getChuvas();
         $messages = array();
         foreach($chuvas as $manan) {
-            $messages[] = "- {$manan->nome}:\n\nHoje: {$manan->hoje}\nAcumulado: {$manan->acum}\n
-                        Média histórica: {$manan->media}\n\n";
+            $messages[] = "- {$manan->nome}:\n\nHoje: {$manan->hoje}\nAcumulado: {$manan->acum}\nMédia histórica: {$manan->media}\n\n";
         }
         $message = implode("-------------\n\n", $messages);
         $this->replyWithMessage($message);
