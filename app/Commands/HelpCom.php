@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Commands;
-
+use Telegram\Bot\Commands\Command;
 
 /**
  * Class HelpCommand
  *
  */
-class HelpCom 
+class HelpCom extends Command;
 {
     /**
      * @var string Command Name
