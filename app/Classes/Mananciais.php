@@ -15,7 +15,7 @@ class Mananciais {
 		$chuvas = array();
 		$obj = new stdClass();
 		$obj->nome = "Cantareira";
-		$obj->hoje = $cells->eq(1);
+		$obj->hoje = $cells->eq(1)->text();
 		$obj->acum = "90mm";
 		$obj->media = "200mm";
 		$chuvas[] = $obj;
