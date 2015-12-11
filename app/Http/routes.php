@@ -20,5 +20,5 @@ Route::get("/sethook", function(){
 });
 
 Route::any('/webhook', function (){
-    //Telegram::commandsHandler(true);
+    Telegram::commandsHandler(true);
 });
