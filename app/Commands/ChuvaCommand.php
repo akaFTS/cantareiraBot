@@ -29,7 +29,7 @@ class ChuvaCommand extends Command
         foreach($chuvas->manans as $manan) {
             $messages[] = "- {$manan->nome}:\n\nHoje: {$manan->hoje}\nAcumulado: {$manan->acum}\nMédia histórica: {$manan->media}";
         }
-        $messages[] = ("Data: ".$chuvas->data);
+        $messages[] = ("Data: ".$chuvas->data." :thumbsup:");
         $message = implode("\n\n-------------\n\n", $messages);
         $this->replyWithMessage($message);
     }
