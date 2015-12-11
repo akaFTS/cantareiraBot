@@ -32,7 +32,7 @@ class Mananciais {
 	public static function getHoje(){
 		$client = new Client();
 		$crawler = $client->request('GET', 'http://www.apolo11.com/reservatorios.php?step=d');
-		$tables = $crawler->filter("table tr table");
+		$tables = $crawler->filter("table")->first()->filter("tr table");
 		$cnt = $tables->eq(1)->text();
 		return $cnt;	
 	}
