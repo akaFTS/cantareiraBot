@@ -30,7 +30,7 @@ class ChuvaCommand extends Command
         foreach($chuvas->manans as $manan) {
             $messages[] = "- {$manan->nome}:\n\nHoje: {$manan->hoje}\nAcumulado: {$manan->acum}\nMédia histórica: {$manan->media}";
         }
-        $messages[] = ("Data: ".$chuvas->data." ".Emoji::Decode('\ud83d\ude04'));
+        $messages[] = ("Data: ".$chuvas->data." ".Emoji::Decode('\u1F602'));
         $message = implode("\n\n-------------\n\n", $messages);
         $this->replyWithMessage($message);
     }
