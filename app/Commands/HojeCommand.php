@@ -27,6 +27,7 @@ class HojeCommand extends Command
         $niveis = Mananciais::getHoje();
         $message = '💧 Nível das represas em '.$niveis->data." 💧\n\n";
         $represas = array();
+        $odd = 0;
         foreach($niveis->niveis as $manan){
             $var = floatval($manan->hoje) - floatval($manan->ontem);
             if($var > 0) {
@@ -37,7 +38,14 @@ class HojeCommand extends Command
             } else {
                 $txt = "⚪ (0.0)";
             }
-            $represas[] = "🔸 {$manan->nome}:\n  {$manan->hoje} {$txt}";
+
+            if($odd == 0)
+                $diamond = "🔸";
+            else
+                $diamond = "🔹";
+            $odd = ($odd+1)%2;
+
+            $represas[] = "{$diamond} {$manan->nome}:\n{$diamond} {$manan->hoje} {$txt}";
         }
         $represas = implode("\n\n", $represas);
         $message .= $represas;
