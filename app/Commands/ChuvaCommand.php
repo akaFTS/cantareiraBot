@@ -40,8 +40,7 @@ class ChuvaCommand extends Command
             
             $messages[] = "♦️ {$manan->nome}:\n\n{$hojmoji} Hoje: {$manan->hoje}\n💧 Acumulado: {$manan->acum}\n📊 Média histórica: {$manan->media}";
         }
-        $messages[] = ("📅 Data: ".$chuvas->data);
-        $message = "☔ Pluviometria ☔\n\n".implode("\n\n〰️〰️〰️〰️〰️〰️〰️〰\n\n", $messages);
+        $message = "☔ Pluviometria em {$chuvas->data} ☔\n\n".implode("\n\n〰️〰️〰️〰️〰️〰️〰️〰\n\n", $messages);
         $this->replyWithMessage($message);
     }
 }
