@@ -23,6 +23,14 @@ class AboutCommand extends Command
      */
     public function handle($arguments)
     {
+        $keyboard = [
+            ['7', '8', '9'],
+            ['4', '5', '6'],
+            ['1', '2', '3'],
+                 ['0']
+        ];
+
+        $reply_markup = $telegram->replyKeyboardMarkup($keyboard, true, true);
         $this->replyWithMessage('CantareiraBot criado com muito amor por Gustavo Silva do IME-USP.'.PHP_EOL.'Versão: 0.3 beta');
     }
 }
