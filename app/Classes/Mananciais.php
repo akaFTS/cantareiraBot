@@ -46,12 +46,12 @@ class Mananciais {
 			$nivel->ontem = $tables->eq($i*9 + 15)->text();
 			$tmp[] = $nivel;
 		}
-		$obj->nivel[0] = $tmp[0];
-		$obj->nivel[1] = $tmp[3];
-		$obj->nivel[2] = $tmp[1];
-		$obj->nivel[3] = $tmp[2];
-		$obj->nivel[4] = $tmp[5];
-		$obj->nivel[5] = $tmp[4];
+		$obj->niveis[0] = $tmp[0];
+		$obj->niveis[1] = $tmp[3];
+		$obj->niveis[2] = $tmp[1];
+		$obj->niveis[3] = $tmp[2];
+		$obj->niveis[4] = $tmp[5];
+		$obj->niveis[5] = $tmp[4];
 
 		return $obj;	
 	}

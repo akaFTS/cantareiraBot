@@ -25,7 +25,7 @@ class HojeCommand extends Command
     public function handle($arguments)
     {
         $niveis = Mananciais::getHoje();
-        $message = 'Nível das represas em '.$niveis->data.'\n';
+        $message = 'Nível das represas em '.$niveis->data."\n";
         $represas = array();
         foreach($niveis->niveis as $manan){
             $represas[] = "- {$manan->nome}:\n{$manan->hoje}";
