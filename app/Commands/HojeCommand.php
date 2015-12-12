@@ -32,7 +32,8 @@ class HojeCommand extends Command
             if($var > 0) {
                 $txt = "(+ {$var})"
             } else if($var < 0) {
-                $txt = "(- {-1*$var})";
+                $var = -1*$var;
+                $txt = "(- {$var})";
             } else {
                 $txt = "(0.0)";
             }
