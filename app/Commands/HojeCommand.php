@@ -37,7 +37,7 @@ class HojeCommand extends Command
             } else {
                 $txt = "⚪ (0.0)";
             }
-            $represas[] = "🔷 {$manan->nome}:\n{$manan->hoje} {$txt}";
+            $represas[] = "🔷 {$manan->nome}:\n  {$manan->hoje} {$txt}";
         }
         $represas = implode("\n\n", $represas);
         $message .= $represas;
