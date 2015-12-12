@@ -30,7 +30,7 @@ class AboutCommand extends Command
                  ['0']
         ];
 
-        $reply_markup = $telegram->replyKeyboardMarkup($keyboard, true, true);
+        $reply_markup = $this->replyKeyboardMarkup($keyboard, true, true);
         $this->replyWithMessage('CantareiraBot criado com muito amor por Gustavo Silva do IME-USP.'.PHP_EOL.'Versão: 0.3 beta');
     }
 }
