@@ -30,7 +30,7 @@ class AboutCommand extends Command
                  ['0']
         ];
 
-        $reply_markup = $this->replyKeyboardMarkup($keyboard, true, true);
-        $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nVersão: 0.7 beta");
+        $markup = $this->replyKeyboardMarkup($keyboard, true, true);
+        $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nVersão: 0.7 beta", false, null, $markup);
     }
 }
