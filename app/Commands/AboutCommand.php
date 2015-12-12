@@ -31,6 +31,6 @@ class AboutCommand extends Command
         ];
 
         $reply_markup = $this->replyKeyboardMarkup($keyboard, true, true);
-        $this->replyWithMessage('CantareiraBot criado com muito amor por Gustavo Silva do IME-USP.'.PHP_EOL.'Versão: 0.3 beta');
+        $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nVersão: 0.7 beta");
     }
 }
