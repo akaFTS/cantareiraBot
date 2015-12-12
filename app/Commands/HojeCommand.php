@@ -30,7 +30,7 @@ class HojeCommand extends Command
         foreach($niveis->niveis as $manan){
             $var = floatval($manan->hoje) - floatval($manan->ontem);
             if($var > 0) {
-                $txt = "(+ {$var})"
+                $txt = "(+ {$var})";
             } else if($var < 0) {
                 $var = -1*$var;
                 $txt = "(- {$var})";
