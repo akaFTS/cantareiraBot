@@ -44,7 +44,7 @@ class Mananciais {
 			$nivel->nome = $nomes[$i];
 			$nivel->hoje = $tables->eq($i*9 + 16)->text();
 			$nivel->ontem = $tables->eq($i*9 + 15)->text();
-			$nivel->chuva = explode(" ", $tables->eq($i)->text())[1];
+			$nivel->chuva = number_format(floatval($tables->eq($i)->text()), 1);
 			$tmp[] = $nivel;
 		}
 		$obj->niveis[0] = $tmp[0];
