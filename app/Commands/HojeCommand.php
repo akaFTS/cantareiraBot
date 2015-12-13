@@ -41,6 +41,14 @@ class HojeCommand extends Command
                 $emo = "⚪";
                 $txt = "(0.0)";
             }
+            if($manan->chuva < 0.8)
+                $hojmoji = "☀️";
+            else if($manan->chuva < 2.0)
+                $hojmoji = "⛅";
+            else if($manan->chuva < 6.0)
+                $hojmoji = "🌧";
+            else
+                $hojmoji = "⛈";
 
             if($odd == 0)
                 $diamond = "🔸";
@@ -48,7 +56,7 @@ class HojeCommand extends Command
                 $diamond = "🔹";
             $odd = ($odd+1)%2;
 
-            $represas[] = "{$diamond} {$manan->nome}:\n{$diamond} {$emo} {$manan->hoje} {$txt}\n{$diamond} {$manan->chuva}mm";
+            $represas[] = "{$diamond} {$manan->nome}:\n{$diamond} {$emo} {$manan->hoje} {$txt}\n{$diamond} {$hojmoji} {$manan->chuva}mm";
         }
         $represas = implode("\n\n", $represas);
         $message .= $represas;
