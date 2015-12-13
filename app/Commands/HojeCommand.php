@@ -31,12 +31,15 @@ class HojeCommand extends Command
         foreach($niveis->niveis as $manan){
             $var = number_format(floatval($manan->hoje) - floatval($manan->ontem), 1);
             if($var > 0) {
-                $txt = "💚 (+{$var})";
+                $emo = "💚";
+                $txt = "(+{$var})";
             } else if($var < 0) {
+                $emo = "💔"
                 $var = -1*$var;
-                $txt = "💔 (-{$var})";
+                $txt = "(-{$var})";
             } else {
-                $txt = "⚪ (0.0)";
+                $emo = "⚪";
+                $txt = "(0.0)";
             }
 
             if($odd == 0)
@@ -45,7 +48,7 @@ class HojeCommand extends Command
                 $diamond = "🔹";
             $odd = ($odd+1)%2;
 
-            $represas[] = "{$diamond} {$manan->nome}:\n{$diamond} {$manan->hoje} {$txt}";
+            $represas[] = "{$diamond} {$manan->nome}:\n{$diamond} {$emo} {$manan->hoje} {$txt}\n{$diamond} {$manan->chuva}mm";
         }
         $represas = implode("\n\n", $represas);
         $message .= $represas;
