@@ -34,7 +34,7 @@ class HojeCommand extends Command
                 $emo = "💚";
                 $txt = "(+{$var})";
             } else if($var < 0) {
-                $emo = "💔"
+                $emo = "💔";
                 $var = -1*$var;
                 $txt = "(-{$var})";
             } else {
