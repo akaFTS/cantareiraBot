@@ -18,6 +18,8 @@ class AboutCommand extends Command
      */
     protected $description = "Sobre o bot";
 
+    protected $keywords = '💭 Sobre';
+
     /**
      * @inheritdoc
      */

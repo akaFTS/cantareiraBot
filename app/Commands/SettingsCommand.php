@@ -18,6 +18,8 @@ class SettingsCommand extends Command
      */
     protected $description = "Ver configurações";
 
+    protected $keywords = "🔧 Configs";
+
     /**
      * @inheritdoc
      */

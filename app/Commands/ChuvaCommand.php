@@ -20,6 +20,8 @@ class ChuvaCommand extends Command
      */
     protected $description = "Como andam as chuvas nos mananciais";
 
+    protected $keywords = '💧 Pluviometria';
+
     /**
      * @inheritdoc
      */

@@ -18,6 +18,8 @@ class HelpCommand extends Command
      */
     protected $description = "Ver lista de comandos";
 
+    protected $keywords = "❓ Ajuda";
+
     /**
      * @inheritdoc
      */
