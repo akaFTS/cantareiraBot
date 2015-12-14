@@ -56,7 +56,7 @@ class HojeCommand extends Command
                 $diamond = "🔹";
             $odd = ($odd+1)%2;
 
-            $represas[] = "{$diamond} {$manan->nome}:\n{$diamond} {$emo} {$manan->hoje} {$txt}\n{$diamond} {$hojmoji} {$manan->chuva}mm";
+            $represas[] = "{$diamond} {$manan->nome}:\n{$diamond} {$emo} {$manan->hoje} {$txt}\n{$diamond} {$hojmoji} {$manan->chuva} mm";
         }
         $represas = implode("\n\n", $represas);
         $message .= $represas;

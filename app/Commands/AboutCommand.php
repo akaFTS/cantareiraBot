@@ -32,6 +32,6 @@ class AboutCommand extends Command
 
         $markup = $this->getTelegram()->replyKeyboardMarkup($keyboard, true, false);
         error_log($markup);
-        $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nVersão: 0.7 beta", null, false, null, $markup);
+        $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nVersão: 0.7 beta", false, null, $markup);
     }
 }
