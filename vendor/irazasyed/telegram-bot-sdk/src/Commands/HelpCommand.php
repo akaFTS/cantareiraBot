@@ -39,7 +39,7 @@ class HelpCommand extends Command
         foreach ($commands as $name => $handler) {
             $response .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
         }
-
+        error_log($markup);
         $this->replyWithMessage($response, false, null, $markup);
     }
 }
