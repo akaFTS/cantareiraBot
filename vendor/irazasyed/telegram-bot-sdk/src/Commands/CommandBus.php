@@ -114,7 +114,8 @@ class CommandBus
     public function handler($message, Update $update)
     {
         if(strpos($message, "/") !== 0) {
-            $this->executeText($message, $update)
+            $this->executeText($message, $update);
+            return $update;
         }
         $match = $this->parseCommand($message);
         if ($match) {
