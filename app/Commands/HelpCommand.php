@@ -26,7 +26,7 @@ class HelpCommand extends Command
         $keyboard = [
             ['📊 Níveis Hoje'],
             ['💧 Pluviometria'],
-            ['❓ Ajuda', '⚙ Configs', '💭 Sobre']
+            ['❓ Ajuda', '🔧 Configs', '💭 Sobre']
         ];
 
         $markup = $this->getTelegram()->replyKeyboardMarkup($keyboard, true, false);

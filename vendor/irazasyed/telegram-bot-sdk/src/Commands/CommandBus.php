@@ -113,6 +113,9 @@ class CommandBus
      */
     public function handler($message, Update $update)
     {
+        if(strpos($message, "/") !== 0) {
+            $this->executeText($message, $update)
+        }
         $match = $this->parseCommand($message);
         if ($match) {
             $command = $match[1];
@@ -163,5 +166,13 @@ class CommandBus
         }
 
         return 'Ok';
+    }
+
+    public function executeText($message, $update) {
+        foreach($this->commands as $comm) {
+            if ($comm->getKeywords() == $message) {
+                return $comm->make($this->telegram, array(), $update);
+            }
+        }
     }
 }

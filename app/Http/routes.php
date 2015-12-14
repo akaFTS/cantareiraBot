@@ -11,6 +11,8 @@
 |
 */
 
+use App\Classes\Handler;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,5 +22,6 @@ Route::get("/sethook", function(){
 });
 
 Route::any('/webhook', function (){
-    Telegram::commandsHandler(true);
+    $updates = Telegram::commandsHandler(true);
+    Handler::handle();
 });

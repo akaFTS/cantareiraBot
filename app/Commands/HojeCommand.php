@@ -19,6 +19,8 @@ class HojeCommand extends Command
      */
     protected $description = "Estado das represas hoje";
 
+    protected $keywords = '📊 Níveis Hoje';
+
     /**
      * @inheritdoc
      */

@@ -50,6 +50,19 @@ abstract class Command implements CommandInterface
      */
     protected $update;
 
+    protected $keywords;
+
+    public function getKeywords()
+    {
+        return $this->keywords;
+    }
+
+    public function setKeywords($keywords)
+    {
+        $this->keywords = $keywords; 
+    }
+
+
     /**
      * Get Command Name.
      *
