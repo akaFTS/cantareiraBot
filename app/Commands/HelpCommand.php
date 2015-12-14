@@ -24,15 +24,14 @@ class HelpCommand extends Command
     public function handle($arguments)
     {
         $keyboard = [
-            ['/hoje'],
-            ['chuva', '/chuva.Chuva', '/chuva Chuva'],
-            ['1', '2', '3'],
-                 ['0']
+            ['📊 Níveis Hoje'],
+            ['💧 Pluviometria'],
+            ['❓ Ajuda', '⚙ Configs', '💭 Sobre']
         ];
 
         $markup = $this->getTelegram()->replyKeyboardMarkup($keyboard, true, false);
 
-        
+
         $commands = $this->telegram->getCommands();
 
         $response = 'Lista de comandos do bot: '.PHP_EOL;
