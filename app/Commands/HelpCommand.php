@@ -23,6 +23,16 @@ class HelpCommand extends Command
      */
     public function handle($arguments)
     {
+        $keyboard = [
+            ['/hoje'],
+            ['chuva', '/chuva.Chuva', '/chuva Chuva'],
+            ['1', '2', '3'],
+                 ['0']
+        ];
+
+        $markup = $this->getTelegram()->replyKeyboardMarkup($keyboard, true, false);
+
+        
         $commands = $this->telegram->getCommands();
 
         $response = 'Lista de comandos do bot: '.PHP_EOL;
@@ -30,6 +40,6 @@ class HelpCommand extends Command
             $response .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
         }
 
-        $this->replyWithMessage($response);
+        $this->replyWithMessage($response, false, null, $markup);
     }
 }
