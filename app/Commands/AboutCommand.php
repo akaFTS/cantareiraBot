@@ -31,6 +31,7 @@ class AboutCommand extends Command
         ];
 
         $markup = $this->replyKeyboardMarkup($keyboard, true, true);
+        error_log($markup);
         $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nVersão: 0.7 beta", null, false, null, $markup);
     }
 }
