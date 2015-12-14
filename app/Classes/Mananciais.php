@@ -44,7 +44,7 @@ class Mananciais {
 			$nivel->nome = $nomes[$i];
 			$nivel->hoje = $tables->eq($i*9 + 16)->text();
 			$nivel->ontem = $tables->eq($i*9 + 15)->text();
-			$nivel->chuva = floatval($tables->eq($i)->text());
+			$nivel->chuva = preg_replace("/[^0-9,.]/", "", $tables->eq($i)->text());
 			$tmp[] = $nivel;
 		}
 		$obj->niveis[0] = $tmp[0];
