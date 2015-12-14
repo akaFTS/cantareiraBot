@@ -11,8 +11,6 @@
 |
 */
 
-use App\Classes\Handler;
-
 Route::get('/', function () {
     return view('welcome');
 });
