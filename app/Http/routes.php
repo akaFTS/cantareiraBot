@@ -21,5 +21,4 @@ Route::get("/sethook", function(){
 
 Route::any('/webhook', function (){
     $updates = Telegram::commandsHandler(true);
-    Handler::handle();
 });
