@@ -45,9 +45,9 @@ class HojeCommand extends Command
             }
             if($manan->chuva < 0.8)
                 $hojmoji = "☀️";
-            else if($manan->chuva < 2.0)
+            else if($manan->chuva < 4.0)
                 $hojmoji = "⛅";
-            else if($manan->chuva < 6.0)
+            else if($manan->chuva < 10.0)
                 $hojmoji = "🌧";
             else
                 $hojmoji = "⛈";

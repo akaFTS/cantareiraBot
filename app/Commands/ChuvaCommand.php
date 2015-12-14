@@ -33,9 +33,9 @@ class ChuvaCommand extends Command
             $hoje = floatval($manan->hoje);
             if($hoje < 0.8)
                 $hojmoji = "☀️";
-            else if($hoje < 2.0)
+            else if($hoje < 4.0)
                 $hojmoji = "⛅";
-            else if($hoje < 6.0)
+            else if($hoje < 10.0)
                 $hojmoji = "🌧";
             else
                 $hojmoji = "⛈";
