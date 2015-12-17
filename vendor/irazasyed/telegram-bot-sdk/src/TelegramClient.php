@@ -121,7 +121,7 @@ class TelegramClient
         $returnResponse = $this->getResponse($request, $rawResponse);
 
         if ($returnResponse->isError()) {
-            throw $returnResponse->getThrownException();
+            //throw $returnResponse->getThrownException();
         }
 
         return $returnResponse;

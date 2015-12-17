@@ -25,6 +25,6 @@ class AboutCommand extends Command
      */
     public function handle($arguments)
     {
-        $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nDados das represas: Site da Sabesp e APOLO11\nVersão: 1.0");
+        $this->replyWithMessage("Bot criado com muito amor por Gustavo Silva do IME-USP.\nDados das represas: Site da Sabesp e APOLO11\nVersão: 1.0.1");
     }
 }
