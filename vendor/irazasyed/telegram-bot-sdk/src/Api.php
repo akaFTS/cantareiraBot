@@ -626,7 +626,11 @@ class Api
     {
         if ($webhook) {
             $update = $this->getWebhookUpdates();
-            $this->processCommand($update);
+            try{
+                $this->processCommand($update);
+            } catch (Exception $e) {
+                //nao faça nada
+            }
 
             return $update;
         }
