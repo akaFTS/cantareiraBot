@@ -6,26 +6,26 @@ namespace App\Commands;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 
-class SettingsCommand extends Command
+class LikeCommand extends Command
 {
     /**
      * @var string Command Name
      */
-    protected $name = "settings";
+    protected $name = "like";
 
     /**
      * @var string Command Description
      */
-    protected $description = "Ver configurações";
+    protected $description = "Curtir o bot";
 
-    protected $keywords = "🔧 Configs";
+    protected $keywords = "👍 Curtir";
 
     /**
      * @inheritdoc
      */
     public function handle($arguments)
     {
-        $response = "No momento não há nada pra ser configurado no bot.";
+        $response = "Gostou desse bot 😊? O que acha de dar 5 estrelas para ajudá-lo 😁?\nEntão, entre nesse site: https://storebot.me/bot/cantareirabot\n⭐⭐⭐⭐⭐";
 
         $this->replyWithMessage($response);
     }

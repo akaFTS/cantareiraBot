@@ -60,7 +60,7 @@ return [
         App\Commands\HojeCommand::class,
         App\Commands\ChuvaCommand::class,
         App\Commands\HelpCommand::class,
-        App\Commands\SettingsCommand::class,
+        App\Commands\LikeCommand::class,
         App\Commands\AboutCommand::class
     ],
 ];
